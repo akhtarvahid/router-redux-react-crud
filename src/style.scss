@@ -1,0 +1,100 @@
+body {
+    background-color: aliceblue;
+}
+$total-items: 100;
+
+.listing {
+    width: 80%;
+    margin: 30px auto;
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        h5 {
+            color: cadetblue;
+            font-size: 30px;
+            margin: 0;
+        }
+    }
+    .list-group {
+        li {
+            text-transform: capitalize;
+            animation: fadeIn 0.5s linear;
+            animation-fill-mode: both;
+            margin: 5px 0;
+        }
+        // Set delay per List Item
+        @for $i from 1 through $total-items {
+            li:nth-child(#{$i}) {
+            animation-delay: .130s * $i;
+            }
+        }
+  
+        // Keyframe animation
+        @keyframes fadeIn {
+            0% {
+            opacity: 0;
+            top: 100px;
+            }
+            75% {
+            opacity: 0.5;
+            top: 0px;
+            }
+            100% {
+            opacity: 1;
+            }
+        }
+        .list-group-item {
+            a {
+                font-size: 18px;
+            }
+            div {
+                font-size: 15px;
+            }
+        }
+  
+        h2 {
+            position: relative;
+            color: rgba(0, 0, 0, .3);
+            font-size: 5em
+        }
+        h2:before {
+            content: attr(data-text);
+            position: absolute;
+            overflow: hidden;
+            max-width: 7em;
+            white-space: nowrap;
+            color: coral;
+            animation: loading 3s infinite;
+        }
+        @keyframes loading {
+            0% {
+                max-width: 0;
+            }
+        }
+    }
+
+    // post styling
+    .post {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .post-body {
+        text-transform: capitalize;
+        margin-top: 60px;
+        h2 {
+            margin-bottom: 20px;
+        }
+        span {
+            font-weight: 600;
+        }
+    }
+
+    //addPost styling
+     .btn-primary {
+         margin-right: 6px;
+    }
+}
