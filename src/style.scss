@@ -97,4 +97,10 @@ $total-items: 100;
      .btn-primary {
          margin-right: 6px;
     }
+    @media only screen and (max-width: 320px) { 
+     width: 98%;
+     .listing_header{
+         margin: 15px;
+     }
+    }
 }

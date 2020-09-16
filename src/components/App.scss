@@ -1,0 +1,22 @@
+.page-item.active .page-link, 
+  .page-item.active .page-link:focus, 
+    .page-item.active .page-link:hover {
+    text-decoration: none;
+}
+.page-item {
+  &.disabled {
+      background-color: lightblue;
+      a {
+        pointer-events: none;
+        background-color: lightgrey !important;
+      }
+  }
+}
+.page-link {
+    padding: 0.5rem 1rem;
+    border: 1px solid;
+    cursor: pointer;
+    &:hover {
+     text-decoration: none;
+    }
+}
